@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DH APIS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<script>
+
+    function mostrarInfo(){
+        document.querySelectorAll(".click").forEach(el => {
+      el.addEventListener("click", e => {
+        const id = e.target.getAttribute("id");
+
+        switch(id){
+            case "xbox":
+                document.getElementById("detalle").innerHTML = '<h3><span class="material-symbols-outlined">stadia_controller</span>Xbox Games</h3><p>Al consultar esta API obtendrás un listado con los juegos de Xbox más populares.</p><p>Podrás observar su nombre y género</p><a href="https://my-json-server.typicode.com/GestionDHS/xbox/games" target="__blank">https://my-json-server.typicode.com/GestionDHS/xbox/games</a>'
+            break;
+    
+            case "movies":
+            document.getElementById("detalle").innerHTML = '<h3><span class="material-symbols-outlined">movie</span>Movies</h3><p>Habrá 5 endpoints disponibles de los cuales obtendrás distintos listados de películas según su género </p><ul><li>Action-adventure: <a href="https://my-json-server.typicode.com/GestionDHS/movies/action-adventure" target="__blank">https://my-json-server.typicode.com/GestionDHS/movies/action-adventure</a></li> <li>Animation: <a href="https://my-json-server.typicode.com/GestionDHS/movies/animation" target="__blank">https://my-json-server.typicode.com/GestionDHS/movies/animation</a></li> <li>Horror: <a href="https://my-json-server.typicode.com/GestionDHS/movies/horror" target="__blank">https://my-json-server.typicode.com/GestionDHS/movies/horror</a></li> <li>Family: <a href="https://my-json-server.typicode.com/GestionDHS/movies/family" target="__blank">https://my-json-server.typicode.com/GestionDHS/movies/family</a></li> <li>Scifi-fantasy: <a href="https://my-json-server.typicode.com/GestionDHS/movies/scifi-fantasy" target="__blank">https://my-json-server.typicode.com/GestionDHS/movies/scifi-fantasy</a></li></ul>'
+            
+            break;
+    
+            case "coffee":
+            document.getElementById("detalle").innerHTML = '<h3><span class="material-symbols-outlined">coffee</span>Coffee</h3><p>Podrás consultar dos endpoints, según el tipo de café que estés buscando </p><ul><li>Fríos: <a href="https://my-json-server.typicode.com/GestionDHS/coffee/iced" target="__blank">https://my-json-server.typicode.com/GestionDHS/coffee/iced</a></li><li>Calientes: <a href="https://my-json-server.typicode.com/GestionDHS/coffee/hot" target="__blank">https://my-json-server.typicode.com/GestionDHS/coffee/hot</a></li></ul>'
+            break;
+    
+        }
+      });
+
+    });
+    }
+</script>
+
+</head>
+<body>
+    <header><img src="https://assets.digitalhouse.com/content/ar/sch/logo-schools-blanco.png"><h1>DH APIS</h1></header>
+    <main>
+        
+        <section>
+            <h2>Listado de APIS</h2>
+            <p>Estas son las APIs de muestra con las que podrás practicar en los ejercicios de JS.</p>
+            <div>
+                <article>
+                    <h3><span class="material-symbols-outlined">
+                        stadia_controller
+                        </span>
+                    Xbox Games</h3>
+                    <p>Encontrá los juegos de Xbox más populares </p>
+                    <button  class="click" id="xbox" onclick="mostrarInfo()">Ver endpoints disponibles</button>
+                </article>
+                <article>
+                    <h3><span class="material-symbols-outlined">
+                        movie
+                        </span>
+                        Movies</h3>
+                    <p>Encontrá películas de tus géneros favoritos </p>
+                    <button class="click" id="movies" onclick="mostrarInfo()">Ver endpoints disponibles</button>
+                </article>
+                <article>
+                    <h3><span class="material-symbols-outlined">
+                        coffee
+                        </span>
+                    Coffee </h3>
+                    <p>Encontrá los cafés más ricos y populares </p>
+                    <button class="click" id="coffee" onclick="mostrarInfo()">Ver endpoints disponibles</button>
+                </article>
+            </div>
+        </section>
+        <section id="infoApis">
+            <article id="detalle">
+                <h3>Selecciona una Api para ver su detalle</h3>
+            </article>
+        </section>
+    </main>
+    
+</body>
+</html>
